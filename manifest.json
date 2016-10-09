@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Transmorize",
+  "version": "0.0.1",
+
+  "default_locale": "kr",
+  "description": "Google Translate -> Wordbook",
+
+  "background": {
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://translate.google.com/*"],
+      "css": ["transmorize.css"],
+      "js": ["transmorize.js"]
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "http://localhost:3000/*"
+  ],
+  "browser_action": {
+    "default_title": "Transmorize",
+    "default_popup": "popup.html"
+  }
+}
+
